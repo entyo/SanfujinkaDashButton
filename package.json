@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "node-dash-button": "^0.6.1",
-    "wifi_location": "^0.0.3"
+    "node-dash-button": "^0.6.1"
   },
   "devDependencies": {},
   "scripts": {
