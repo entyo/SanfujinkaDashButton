@@ -11,8 +11,7 @@ const gLocation = new GLocation(
     "産婦人科",
     "35.6766071",
     "139.7605659",
-    "50000",
-    "distance"
+    "50000"
 );
 
 // Slack APIの設定

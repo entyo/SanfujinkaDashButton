@@ -2,7 +2,7 @@
 
 class GLocation {
 
-  constructor(key, query, lon, lat, radius, sortBy) {
+  constructor(key, query, lon, lat, radius) {
 
     this.url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
                 + "key=" + key                          // APIキー
