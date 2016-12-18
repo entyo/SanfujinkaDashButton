@@ -3,9 +3,13 @@ const request = require('request')
 
 class Slack {
 
-  constructor(uri, name, address) {
+  constructor(uri) {
+    this.uri = uri;
+  }
+
+  post(title, text){
     this.options = {
-      uri: uri,
+      uri: this.uri,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -13,17 +17,14 @@ class Slack {
         attachments: [{
           fallback: "最寄りの産婦人科情報",
           color: '#ED225D',
-          title: name,
+          title: title,
           fields: [{
-            "value": address,
+            "value": text,
             "short": false
           }]
         }]
       }
     };
-  }
-
-  post(){
     request.post(this.options, function (error, response, body) {
       if (error || response.statusCode != 200) {
         console.error('error: ' + response.statusCode + '\n' + response.body);
