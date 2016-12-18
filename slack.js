@@ -25,11 +25,16 @@ class Slack {
         }]
       }
     };
+
     request.post(this.options, function (error, response, body) {
-      if (error || response.statusCode != 200) {
-        console.error('error: ' + response.statusCode + '\n' + response.body);
-      } else {
-        console.log(body);
+      if (error) {
+        console.error('エラー: ' + error + '\n');
+      }
+      if (response.statusCode != 200) {
+        console.error('エラー: Slack APIが HTTP ' + http.statusCode + "を返しました。\n");
+      } 
+      else {
+        console.log("投稿に成功しました。\n");
       }
     });
   }

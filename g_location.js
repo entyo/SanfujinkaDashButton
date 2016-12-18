@@ -15,7 +15,6 @@ class GLocation {
   
   get() {
     const url = this.url;
-    console.log(url);
     return new Promise(function (resolve, reject) {
       const request = require('request');
       request.get(url, function (error, res) {
